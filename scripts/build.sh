@@ -8,7 +8,7 @@ yarn build
 cd build
 
 git init
-git remote add origin git@github.com:altbdoor/ng-reddit-rss.git
+git remote add origin git@github.com:altbdoor/reddit-preview.git
 
 git add .
 timestamp=$(date '+%Y-%m-%dT%H:%M:%S%z')
