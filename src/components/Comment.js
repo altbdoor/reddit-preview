@@ -1,5 +1,5 @@
 import React from 'react'
-import { defaultComment } from '../data/default_comment';
+import { defaultComment } from '../data/default_comment'
 
 export const Comment = ({ username, content }) => {
     if (content === '') {
