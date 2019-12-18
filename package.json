@@ -4,11 +4,11 @@
   "private": true,
   "homepage": "https://altbdoor.github.io/reddit-preview/",
   "dependencies": {
-    "prettier": "^1.18.2",
+    "prettier": "^1.19.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
-    "snudown-js": "^3.1.5",
+    "snudown-js": "^3.1.8",
     "use-debounce": "^2.2.0"
   },
   "scripts": {
