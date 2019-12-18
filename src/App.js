@@ -24,7 +24,7 @@ export const App = () => {
 
     const [debouncedSubreddit] = useDebouncedCallback((newSubreddit) => {
         const stylesheet = document.getElementById('subreddit-css')
-        stylesheet.href = `https://www.reddit.com/r/${newSubreddit}/stylesheet.css`
+        stylesheet.href = `https://old.reddit.com/r/${newSubreddit}/stylesheet.css`
     }, debounceTime)
 
     const onChangeSubreddit = (evt) => {
