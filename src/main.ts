@@ -11,7 +11,9 @@ const config = {
 
 const subredditField = qs<HTMLInputElement>('.settings-input');
 const contentField = qs<HTMLTextAreaElement>('textarea');
-const typeField = [...document.querySelectorAll<HTMLInputElement>('[name="form_type"]')]
+const typeField = [
+    ...document.querySelectorAll<HTMLInputElement>('[name="form_type"]'),
+];
 
 fromEvent(subredditField, 'input')
     .pipe(
@@ -30,27 +32,31 @@ merge(
     fromEvent(contentField, 'input').pipe(
         map(({ target }) => (target as HTMLTextAreaElement).value),
         debounceTime(config.debounceTime),
-        distinctUntilChanged(),
+        distinctUntilChanged()
     ),
     fromEvent(typeField, 'change')
-).pipe(
-    map(() => ({
-        content: contentField.value,
-        type: typeField.find((field) => field.checked)!.value
-    }))
-).subscribe(({ content, type }) => {
-    import(/* webpackChunkName: 'snudown' */ 'snudown-js' as any).then((mod) => {
-        [...document.querySelectorAll('form.usertext .md')].forEach(
-            (elem) => {
-                if (elem.getAttribute('data-type') === type) {
-                    elem.innerHTML = mod.markdown(content);
-                } else {
-                    elem.innerHTML = 'Sample text'
-                }
+)
+    .pipe(
+        map(() => ({
+            content: contentField.value,
+            type: typeField.find((field) => field.checked)!.value,
+        }))
+    )
+    .subscribe(({ content, type }) => {
+        import(/* webpackChunkName: 'snudown' */ 'snudown-js' as any).then(
+            (mod) => {
+                [...document.querySelectorAll('form.usertext .md')].forEach(
+                    (elem) => {
+                        if (elem.getAttribute('data-type') === type) {
+                            elem.innerHTML = mod.markdown(content);
+                        } else {
+                            elem.innerHTML = 'Sample text';
+                        }
+                    }
+                );
             }
         );
     });
-})
 
 qs<HTMLButtonElement>('.settings-sample').onclick = () => {
     contentField.value = sampleContent;
