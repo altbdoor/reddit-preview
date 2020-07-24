@@ -55,9 +55,9 @@ merge(
 qs<HTMLButtonElement>('#form-sample').onclick = () => {
     contentField.value = sampleContent;
     contentField.dispatchEvent(new Event('input'));
-}
+};
 
 qs<HTMLButtonElement>('#form-copy').onclick = () => {
     contentField.select();
     document.execCommand('copy');
-}
+};

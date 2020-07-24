@@ -14,7 +14,7 @@ window.addEventListener(
     false
 );
 
-const defaultSampleText = '<p>Sample text</p>'
+const defaultSampleText = '<p>Sample text</p>';
 
 async function processEvt(data: ActionSubreddit | ActionContent) {
     if (data.action === 'subreddit') {
@@ -29,7 +29,9 @@ async function processEvt(data: ActionSubreddit | ActionContent) {
 
         [...document.querySelectorAll('form.usertext .md')].forEach((elem) => {
             if (elem.getAttribute('data-type') === data.value.type) {
-                elem.innerHTML = data.value.content ? mod.markdown(data.value.content) : defaultSampleText;
+                elem.innerHTML = data.value.content
+                    ? mod.markdown(data.value.content)
+                    : defaultSampleText;
             } else if (elem.innerHTML.trim() !== defaultSampleText) {
                 elem.innerHTML = defaultSampleText;
             }

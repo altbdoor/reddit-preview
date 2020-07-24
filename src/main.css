@@ -4,6 +4,10 @@ body {
     height: 100%;
 }
 
+body {
+    min-width: 840px;
+}
+
 .view-container {
     width: 100%;
     height: 100%;
@@ -11,5 +15,5 @@ body {
 
 .view-container__form {
     overflow-y: auto;
-    width: 480px;
+    width: 400px;
 }
