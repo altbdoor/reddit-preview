@@ -6,7 +6,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-    entry: './src/main.ts',
+    entry: {
+        main: './src/main.ts',
+        reddit: './src/reddit.ts',
+    },
     module: {
         rules: [
             {
@@ -59,6 +62,12 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: './src/index.html',
+            chunks: ['main'],
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'reddit.html',
+            template: './src/reddit.html',
+            chunks: ['reddit'],
         }),
         new MiniCssExtractPlugin({
             filename: '[name]-[contenthash].css',

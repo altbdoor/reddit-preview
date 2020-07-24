@@ -1,6 +1,8 @@
 export const sample = `
 _italics_, **bold**, ~~strikethrough~~, \`code\`, [link](https://example.com), normal text^(with superscript)
 
+---
+
 > quoted text
 
 - item one
