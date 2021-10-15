@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Reddit Preview</title>
+    </head>
+    <body>
+        <div class="view-container d-flex">
+            <div class="view-container__form border-right">
+                <div class="p-3">
+                    <div class="mb-3">
+                        <div>Show as:</div>
+                        <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="form_show"
+                                id="form-show-post"
+                                value="post"
+                                checked
+                            />
+                            <label class="form-check-label" for="form-show-post">Post</label>
+                        </div>
+                        <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="form_show"
+                                id="form-show-comment"
+                                value="comment"
+                            />
+                            <label class="form-check-label" for="form-show-comment">Comment</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="form-subreddit">Subreddit:</label>
+                        <div class="input-group">
+                            <span class="input-group-text">/r/</span>
+                            <input type="text" class="form-control" id="form-subreddit" value="all" />
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="form-content">Content:</label>
+                        <textarea class="form-control font-monospace" rows="10" id="form-content" autofocus></textarea>
+                    </div>
+
+                    <button id="form-sample" type="button" class="btn btn-secondary">Sample content</button>
+                    <button id="form-copy" type="button" class="btn btn-secondary">Copy content</button>
+
+                    <hr />
+
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="https://github.com/altbdoor/reddit-preview">GitHub</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://github.com/reddit/snudown">Snudown</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://rxjs-dev.firebaseapp.com/">RxJS</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://getbootstrap.com/">Bootstrap</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="view-container__frame d-flex flex-fill">
+                <iframe style="width: 100%" src="./reddit.html" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <script type="module" src="./src/main.ts"></script>
+    </body>
+</html>
