@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "tsc && vite build",
+        "build": "tsc && vite build --base=./",
         "serve": "vite preview",
         "pretty": "prettier --ignore-path .gitignore --write ./**/*.{json,js,html,css,ts}"
     },
